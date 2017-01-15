@@ -1,0 +1,26 @@
+  <!--<meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">  
+  -->
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Document</title>
+	<script src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+	<body>
+		<form action="printname.php" method="post" >
+			First Name: <input type="text" name="firstname" autocomplete="on"><br>
+			Last Name: <input type="text" name="lastname" autocomplete="off"><br>
+			
+			Username:  <input type="text" id="username" autocomplete="off"><br>
+			<script>document.getElementById("username").value =makeid()</script>
+			Password: <input type="password" name="password"><br>
+			Re-enter Password: <input type="password" name="repassword"><br>
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>
