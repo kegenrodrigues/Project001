@@ -10,6 +10,7 @@ var text = "";
 
 };
 
+
 /*
 document.write("This is working if this is the only thing")
 

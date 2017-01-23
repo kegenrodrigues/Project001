@@ -9,7 +9,7 @@ var text = "";
 	
 
 };
-document.getElementById("username").value = makeid();
+
 /*
 document.write("This is working if this is the only thing")
 

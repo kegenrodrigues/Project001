@@ -12,12 +12,26 @@
 	<script type="text/javascript" src="script.js"></script>
 </head>
 	<body>
-		<form action="printname.php" method="post" >
-			First Name: <input type="text" name="firstname" autocomplete="on"><br>
-			Last Name: <input type="text" name="lastname" autocomplete="off"><br>
+		<form name="myform" action="printname.php" method="post" >
+			First Name: <input type="text" id="firstname" autocomplete="off" ><br>
+			Last Name: <input type="text" id="lastname" autocomplete="off" ><br>
 			
-			Username:  <input type="text" id="username" autocomplete="off"><br>
-			<script>document.getElementById("username").value =makeid()</script>
+			Username:  <input type="text" id="username" autocomplete="off" onclick="myFunction()"><br>
+			<script>
+				function myFunction()
+				{		//document.write("This is working if this is the only thing");
+						var namea=document.getElementById("firstname").value;
+						var nameb=document.getElementById("lastname").value;
+						if(1==1)
+						{
+							document.write(form["qty" + i].value);
+							document.getElementById("username").value =makeid();
+						}
+	
+				}	
+
+				
+			</script>
 			Password: <input type="password" name="password"><br>
 			Re-enter Password: <input type="password" name="repassword"><br>
 			<input type="submit" value="Submit">
