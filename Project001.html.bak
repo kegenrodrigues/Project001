@@ -15,22 +15,18 @@
 		<form name="myform" action="printname.php" method="post" >
 			First Name: <input type="text" id="firstname" autocomplete="off" ><br>
 			Last Name: <input type="text" id="lastname" autocomplete="off" ><br>
-			
-			Username:  <input type="text" id="username" autocomplete="off" onclick="myFunction()"><br>
+			Username:  <input type="text" id="username" autocomplete="off" ><br>
 			<script>
-				function myFunction()
-				{		//document.write("This is working if this is the only thing");
-						var namea=document.getElementById("firstname").value;
-						var nameb=document.getElementById("lastname").value;
-						if(1==1)
-						{
-							//document.write(namea);
-							document.getElementById("username").value =makeid();
-						}
-	
-				}	
-
-				
+				$(document).ready(function(){
+					 $("#username").click(function(){
+						var text = "";
+						var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+						for( var i=0; i < 5; i++ )
+						  text += possible.charAt(Math.floor(Math.random() * possible.length));
+						//document.getElementById("username")=text;
+						$("#username").val(text);
+					});
+				});
 			</script>
 			Password: <input type="password" name="password"><br>
 			Re-enter Password: <input type="password" name="repassword"><br>
