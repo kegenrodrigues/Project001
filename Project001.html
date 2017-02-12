@@ -10,12 +10,28 @@
 	<title>Document</title>
 	<script src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="jquery.validate.js"></script>
+	<script type="text/javascript" src="jquery.validate.min.js"></script>
+	
 </head>
 	<body>
-		<form name="myform" action="printname.php" method="post" >
-			First Name: <input type="text" id="firstname" autocomplete="off" ><br>
-			Last Name: <input type="text" id="lastname" autocomplete="off" ><br>
-			Username:  <input type="text" id="username" autocomplete="off" ><br>
+		<script type="text/javascript">
+		$(document).ready(function() { 
+			$("#form1").validate({ 
+			rules: { 
+				firstname: "required",    // simple rule, converted to {required: true} 
+				lastname: "required",
+				username:"required",
+			}); 
+		
+		}); 
+			
+			
+		</script>
+		<form name="myform" id="form1" action="printname.php" method="post" >
+			First Name: <input type="text" id="firstname" name="firstname" autocomplete="off" ><br>
+			Last Name: <input type="text" id="lastname" name="lastname" autocomplete="off" ><br>
+			Username:  <input type="text" id="username" name="username" autocomplete="off" ><br>
 			<script>
 				$(document).ready(function(){
 					 $("#username").click(function(){
@@ -30,9 +46,15 @@
 					});
 				});
 			</script>
+
 			Password: <input type="password" name="password"><br>
 			Re-enter Password: <input type="password" name="repassword"><br>
 			<input type="submit" value="Submit">
 		</form>
 	</body>
 </html>
+
+
+
+
+<!-- <script type="text/javascript" src="jquery.validate.min.js"></script>-->

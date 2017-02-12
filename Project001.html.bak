@@ -10,29 +10,51 @@
 	<title>Document</title>
 	<script src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="jquery.validate.js"></script>
+	<script type="text/javascript" src="jquery.validate.min.js"></script>
+	
 </head>
 	<body>
-		<form name="myform" action="printname.php" method="post" >
+		<script type="text/javascript">
+		$(document).ready(function() { 
+			$("#form1").validate({ 
+			rules: { 
+				firstname: "required",    // simple rule, converted to {required: true} 
+				lastname: "required",
+				username:"required",
+			}); 
+		
+		}); 
+			
+			
+		</script>
+		<form name="myform" id="form1" action="printname.php" method="post" >
 			First Name: <input type="text" id="firstname" autocomplete="off" ><br>
 			Last Name: <input type="text" id="lastname" autocomplete="off" ><br>
 			Username:  <input type="text" id="username" autocomplete="off" ><br>
 			<script>
 				$(document).ready(function(){
 					 $("#username").click(function(){
-						//var text = "";
-						//var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-						//for( var i=0; i < 5; i++ )
-						// text += possible.charAt(Math.floor(Math.random() * possible.length));
+						var ran_num = "";
+						var possible = "0123456789";
+						for( var i=0; i < 2; i++ )
+						 ran_num += possible.charAt(Math.floor(Math.random() * possible.length));
 						var fname=$("#firstname").val()
 						var lname=$("#lastname").val()
-						text=fname.concat(lname).concat(fname)
+						text=fname.concat(lname).concat(ran_num)
 						$("#username").val(text);
 					});
 				});
 			</script>
+
 			Password: <input type="password" name="password"><br>
 			Re-enter Password: <input type="password" name="repassword"><br>
 			<input type="submit" value="Submit">
 		</form>
 	</body>
 </html>
+
+
+
+
+<!-- <script type="text/javascript" src="jquery.validate.min.js"></script>-->
